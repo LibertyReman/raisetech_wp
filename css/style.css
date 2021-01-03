@@ -39,6 +39,7 @@ a {
   display: flex;
   align-items: center;
   height: 7rem;
+  background: #FEFEFE;
 }
 .header img {
   margin-left: 2.1rem;
@@ -64,6 +65,31 @@ a {
 .header .item6 {
   background: #2498b3;
   color: #FEFEFE;
+}
+
+.main {
+  top: -7rem;
+}
+.main .bg-img1 {
+  height: 650px;
+  background-image: url("../images/bg-hero1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.main .bg-img2 {
+  height: 650px;
+  background-image: url("../images/bg-hero2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.main .bg-img3 {
+  height: 650px;
+  width: 100%;
+  background-image: url("../images/bg-hero3.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=style.css.map */
