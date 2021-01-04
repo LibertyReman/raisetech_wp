@@ -1,6 +1,6 @@
 
 // variables
-$color--black: #2C363F;
+$color--black: #121212;;
 $color--white: #FEFEFE;
 $color--green: #5DAB92;
 $color--red: #ff0000;
@@ -126,6 +126,46 @@ a {
         background-position: center center;
         background-size: cover;
         background-attachment: fixed; //画面スクロールしたときに画像は固定
+    }
+
+    .main-container {
+        top: 8rem;
+        height: 56rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        //border: solid medium $color--red;
+
+        .main-item {
+            height: 32.3rem;
+            width: 41.3rem;
+            background: $color--white;
+            border-radius: 1rem;
+            //メインクラス内のアイテムを真ん中で表示
+            text-align: center;
+
+            .logo-img {
+                padding-top: 4.3rem;
+                width: 28rem;
+            }
+
+            p {
+                padding-top: 2.1rem;
+                padding-bottom: 4.7rem;
+                font-weight: 700;
+                line-height: 1.6;
+            }
+
+            a {
+                border: 0;
+                padding: 2.05rem 3.8rem;
+                border-radius: 0.5rem;
+                font-size: 1.8rem;
+                font-weight: 700;
+                background: $color--blue;
+                color: $color--white;
+            }
+        }
     }
 }
 

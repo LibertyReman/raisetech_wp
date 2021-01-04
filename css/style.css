@@ -10,7 +10,7 @@ body {
   background: #FEFEFE;
   font-size: 1.6rem;
   font-family: 'Noto Sans JP', sans-serif;
-  color: #2C363F;
+  color: #121212;
   line-height: 1.7;
 }
 
@@ -90,6 +90,39 @@ a {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+}
+.main .main-container {
+  top: 8rem;
+  height: 56rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.main .main-container .main-item {
+  height: 32.3rem;
+  width: 41.3rem;
+  background: #FEFEFE;
+  border-radius: 1rem;
+  text-align: center;
+}
+.main .main-container .main-item .logo-img {
+  padding-top: 4.3rem;
+  width: 28rem;
+}
+.main .main-container .main-item p {
+  padding-top: 2.1rem;
+  padding-bottom: 4.7rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.main .main-container .main-item a {
+  border: 0;
+  padding: 2.05rem 3.8rem;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: #2498b3;
+  color: #FEFEFE;
 }
 
 /*# sourceMappingURL=style.css.map */
