@@ -1,10 +1,12 @@
 
 // variables
-$color--black: #121212;;
+$color--font-black: #121212;
+$color--black: #000;
 $color--white: #FEFEFE;
 $color--green: #5DAB92;
 $color--red: #ff0000;
 $color--blue: #2498b3;
+
 
 // mixin
 @mixin breakpoint($point) {
@@ -36,7 +38,7 @@ body {
     background: $color--white;
     font-size: 1.6rem;
     font-family: 'Noto Sans JP', sans-serif;
-    color: $color--black;
+    color: $color--font-black;
     line-height: 1.7;
 }
 
@@ -130,7 +132,7 @@ a {
 
     .main-container {
         top: 8rem;
-        height: 56rem;
+        height: 57rem;
         position: relative;
         display: flex;
         justify-content: center;
@@ -141,7 +143,7 @@ a {
             width: 41.3rem;
             background: $color--white;
             border-radius: 1rem;
-            //メインクラス内のアイテムを真ん中で表示
+            //メインアイテムクラス内の要素を真ん中で表示
             text-align: center;
 
             .logo-img {
@@ -164,6 +166,57 @@ a {
                 font-weight: 700;
                 background: $color--blue;
                 color: $color--white;
+            }
+        }
+    }
+
+    .sub-container {
+        top: 8rem;
+        height: 22.78rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background: $color--black;
+
+        .sub-items {
+            margin: 0 49px 63px 49px; //上右下左
+            //border: solid medium $color--red;
+            //サブアイテムクラス内の要素を真ん中で表示
+            text-align: center;
+
+            .p-sub-title {
+                margin: .2em 0 0 0; //上右下左
+                //border: solid medium $color--red;
+                color: $color--white;
+                font-size: 2.4rem;
+                font-weight: 700;
+            }
+
+            .p-sentense {
+                margin: .5em 0 0 0; //上右下左
+                color: $color--white;
+                font-weight: 700;
+                //left, inline-blockで真ん中左詰め表示
+                text-align: left;
+                display: inline-block;
+            }
+
+            .circle {
+                width: 218px;
+                height: 218px;
+                display: flex;
+                //fontawesomeを左右真ん中に表示
+                justify-content: center;
+                //fontawesomeを上下真ん中に表示
+                align-items: center;
+                border-radius: 50%;
+                border: solid 6px $color--black;
+                background: $color--white;
+            }
+
+            i {
+                font-size: 10rem;
             }
         }
     }
