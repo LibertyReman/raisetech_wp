@@ -55,7 +55,12 @@ h1, h2, h3, h4, h5, h6, p, figure {
 }
 
 ul, ol {
+    //リストの・を非表示
     list-style-type: none;
+    //リストの余白削除
+    margin: 0;
+    padding: 0;
+
 }
 
 a {
@@ -64,50 +69,87 @@ a {
 }
 
 
-.header {
-    //flexの設定
+
+.l-header {
+    // fixedとwidth:100%でヘッダー固定
+    position: fixed;
+    width: 100%;
     display: flex;
-    //flexの設定 縦方向真ん中に要素を表示
-    align-items: center;
+    justify-content: space-between;
     height: 7rem;
     background: $color--white;
-    img {
-        margin-left: 2.1rem;
-    }
-    p {
-        //リストを右端に表示
-        margin-right: auto;
-        margin-left: 1.6rem;
-        font-size: 1.4rem;
-        font-weight: 900;
-        line-height: 1.3;
-        strong {
-            font-size: 1.8rem;
+
+    .left {
+        display: flex;
+        //横方向真ん中に表示
+        justify-content: center;
+        //縦方向真ん中に表示
+        align-items: center;
+
+        img {
+            margin-left: 2.1rem;
+        }
+
+        p {
+            margin-left: 1.6rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            line-height: 1.3;
+
+            .paragraph-bold {
+                font-size: 1.8rem;
+            }
         }
     }
-    li {
-        //縦方向の文字表示位置を真ん中へ
-        line-height: 7rem;
-        //リストの・を非表示
-        list-style: none;
-        //リストを横並びに 
-        //・inlineだと高さが指定できない
-        //・inline-blockだと横に少しのスペースができてしまう
-        display: table-cell;
-        //高さをヘッダータグに合わせる
-        height: 7rem;
-        padding: 0 1.5rem;
-        font-weight: 700;
+
+    .right {
+        ul {
+            display: flex;
+            //横方向真ん中表示
+            justify-content: center;
+            //親要素の上揃えで表示
+            //初期値のstretchは子要素の高さに合わせて広がる
+            align-items: flex-start;
+            //border: solid medium $color--red;
+
+            li {
+                //縦幅固定
+                height: 7rem;
+                //文字を縦方向真ん中に表示
+                line-height: 7rem;
+                padding: 0 1.5rem;
+                font-weight: 700;
+                background: blue;
+                //border: solid medium $color--black;
+            }
+            li:hover {
+                li {
+                    background: green;
+                    display: flex;
+                }
+            }
+
+            ul {
+                display: flex;
+                //縦に表示
+                flex-direction: column;
+                //横幅統一
+                align-items: stretch;
+
+                li {
+                    display: none;
+                }
+            }
+        }
     }
-    .item6 {
-        background: $color--blue;
-        color: $color--white;
-    }
-}
+} 
 
 
 .main {
-    top: -7rem;
+    // z-indexとrelativeでヘッダーフロート表示
+    z-index: -1;
+    position: relative;
+    padding-top: 7rem;
     .bg-img1 {
         height: 650px;
         background-image: url("../images/bg-hero1.png");
