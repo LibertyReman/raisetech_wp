@@ -62,29 +62,54 @@ a {
 .l-header .left p .paragraph-bold {
   font-size: 1.8rem;
 }
-.l-header .right ul {
+.l-header .right .parent-ul {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
-.l-header .right ul li {
+.l-header .right .parent-ul > li {
+  position: relative;
+}
+.l-header .right .parent-ul > li:hover {
+  background: #d4f1f8;
+}
+.l-header .right .parent-ul > li:hover li {
+  visibility: visible;
+  overflow: visible;
+  transition-duration: 0.3s;
+  height: 55.6px;
+  background: #e9f8fb;
+}
+.l-header .right .parent-ul > li li:hover {
+  background: #fff;
+  color: #2498b3;
+}
+.l-header .right .parent-ul > li > a {
+  display: block;
   height: 7rem;
   line-height: 7rem;
   padding: 0 1.5rem;
   font-weight: 700;
-  background: blue;
 }
-.l-header .right ul li:hover li {
-  background: green;
-  display: flex;
+.l-header .right .child-ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 211%;
 }
-.l-header .right ul ul {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+.l-header .right .child-ul > li {
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
 }
-.l-header .right ul ul li {
-  display: none;
+.l-header .right .child-ul > li > a {
+  display: block;
+  line-height: 25.6px;
+  font-weight: 400;
+  padding: 15px 60px 15px 15px;
+}
+.l-header .right .btn {
+  background: #2498b3;
+  color: #FEFEFE;
 }
 
 .main {

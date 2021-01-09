@@ -63,6 +63,7 @@ ul, ol {
 
 }
 
+
 a {
     color: inherit;
     text-decoration: none;
@@ -103,46 +104,82 @@ a {
     }
 
     .right {
-        ul {
+        //親のulタグにだけflexを設定するためにclassを追加
+        .parent-ul {
             display: flex;
             //横方向真ん中表示
             justify-content: center;
-            //親要素の上揃えで表示
-            //初期値のstretchは子要素の高さに合わせて広がる
-            align-items: flex-start;
-            //border: solid medium $color--red;
 
-            li {
+            // > 記号で.parent-ul直下のliタグのみにスタイリングを設定
+            > li {
+                position: relative;
+            }
+
+            > li:hover {
+                background: #d4f1f8;
+            }
+
+
+            //親のリストにマウスホバーしたときに子のリストを表示
+            > li:hover li {
+                //スライド表示の設定
+                visibility: visible;
+                overflow: visible;
+                transition-duration: 0.3s;
+                //aタグの高さに合わせる
+                height: 55.6px;
+                background: #e9f8fb;
+            }
+
+            //子リストにマウスホバーした場合
+            > li li:hover {
+                background: #fff;
+                color: #2498b3;
+            }
+
+            > li > a {
+                //テキスト上ではなく、リスト全体範囲を当たり判定にする
+                display: block;
                 //縦幅固定
                 height: 7rem;
                 //文字を縦方向真ん中に表示
                 line-height: 7rem;
                 padding: 0 1.5rem;
                 font-weight: 700;
-                background: blue;
-                //border: solid medium $color--black;
-            }
-            li:hover {
-                li {
-                    background: green;
-                    display: flex;
-                }
-            }
-
-            ul {
-                display: flex;
-                //縦に表示
-                flex-direction: column;
-                //横幅統一
-                align-items: stretch;
-
-                li {
-                    display: none;
-                }
             }
         }
+
+        .child-ul {
+            //子リストをどこにどのサイズで表示するかを設定
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 211%;
+
+            // > 記号で.child-ul直下のliタグのみにスタイリングを設定
+            > li {
+                //基本は子リストを非表示にする スライド表示の設定
+                visibility: hidden;
+                overflow: hidden;
+                height: 0;
+            }
+
+            > li > a {
+                //テキスト上ではなく、リスト全体範囲を当たり判定にする
+                display: block;
+                //文字を縦方向真ん中に表示
+                line-height: 25.6px;
+                font-weight: 400;
+                padding: 15px 60px 15px 15px;
+            }
+        }
+
+        .btn {
+            background: $color--blue;
+            color: $color--white;
+        }
     }
-} 
+}
 
 
 .main {
